@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ukázka importu GAD -->
+<JVFDTM xmlns="objtyp" xmlns:gml="http://www.opengis.net/gml/3.2">
+  <DataJVFDTM>
+    <VerzeJVFDTM xmlns="cmn">1.4.3</VerzeJVFDTM>
+    <DatumZapisu xmlns="cmn">2023-10-31T00:00:00</DatumZapisu>
+    <TypZapisu xmlns="cmn">změnové věty</TypZapisu>
+    <Data>
+      <PodrobnyBodZPS>
+        <ObjektovyTypNazev code_base="0100000218" code_suffix="01" xmlns="pobzps">podrobný bod ZPS</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="pobzps">Geodetické prvky</KategorieObjektu>
+        <SkupinaObjektu xmlns="pobzps">Podrobný bod</SkupinaObjektu>
+        <ObsahovaCast xmlns="pobzps">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="pobzps">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID1_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719901.07 -1051449.96 326.33</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID2_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719920.17 -1051444.08 326.12</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID3_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719928.25 -1051475.91 326.34</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID4_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719921.64 -1051476.89 326.64</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID5_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719915.27 -1051452.16 326.42</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID6_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719901.81 -1051455.10 326.24</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID7_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719900.34 -1051449.71 326.43</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID8_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719895.04 -1051412.08 326.13</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID9_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719920.41 -1051404.87 326.54</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID10_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719924.10 -1051417.01 326.36</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID11_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719896.37 -1051421.47 326.30</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID12_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719939.03 -1051459.26 321.56</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID13_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719964.00 -1051445.55 321.45</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID14_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719971.35 -1051441.39 321.56</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID15_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719956.41 -1051420.33 321.34</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">d</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <ID>2000123007</ID>
+              </SpolecneAtributyVsechObjektu>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID2000123007_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719954.70 -1051401.23 321.78</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">d</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <ID>2000123008</ID>
+              </SpolecneAtributyVsechObjektu>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID2000123008_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719960.82 -1051417.88 321.89</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">d</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <ID>2000123009</ID>
+              </SpolecneAtributyVsechObjektu>
+              <UrovenUmisteniObjektuZPS xmlns="atr">0</UrovenUmisteniObjektuZPS>
+              <TridaPresnostiPoloha xmlns="atr">3</TridaPresnostiPoloha>
+              <TridaPresnostiVyska xmlns="atr">3</TridaPresnostiVyska>
+              <ZpusobPorizeniPB_ZPS xmlns="atr">1</ZpusobPorizeniPB_ZPS>
+              <CisloBodu xmlns="atr"/>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID2000123009_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-719921.40 -1051432.57 321.59</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </PodrobnyBodZPS>
+      <HraniceVodnihoDila>
+        <ObjektovyTypNazev code_base="0100000306" code_suffix="02" xmlns="hravod">hranice vodního díla</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="hravod">Konstrukční prvky objektů</KategorieObjektu>
+        <SkupinaObjektu xmlns="hravod">Základní konstrukční prvek</SkupinaObjektu>
+        <ObsahovaCast xmlns="hravod">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="hravod">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+              <TypVodnihoDila xmlns="atr">20</TypVodnihoDila>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <curveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <LinearRing gml:id="ID16_02" srsDimension="3" srsName="EPSG:5514">
+                  <posList>-719901.07 -1051449.96 326.33 -719920.17 -1051444.08 326.12 -719928.25 -1051475.91 326.34 -719921.64 -1051476.89 326.64 -719915.27 -1051452.16 326.42 -719901.81 -1051455.10 326.24 -719900.34 -1051449.71 326.43 -719901.07 -1051449.96 326.33</posList>
+                </LinearRing>
+              </curveProperty>
+            </GeometrieObjektu>
+            </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </HraniceVodnihoDila>
+      <HrazDefinicniBod>
+        <ObjektovyTypNazev code_base="0100000331" code_suffix="04" xmlns="hradef">hráz</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="hradef">Vodní díla</KategorieObjektu>
+        <SkupinaObjektu xmlns="hradef">Vzdouvací stavba</SkupinaObjektu>
+        <ObsahovaCast xmlns="hradef">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="hradef">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuDefinicnichBodu xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+              </SpolecneAtributyObjektuDefinicnichBodu>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID17_04" srsDimension="2" srsName="EPSG:5514">
+                  <pos>-719918.70 -1051451.42</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </HrazDefinicniBod>
+      <HraniceBudovy>
+        <ObjektovyTypNazev code_base="0100000299" code_suffix="02" xmlns="hrabud">hranice budovy</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="hrabud">Konstrukční prvky objektů</KategorieObjektu>
+        <SkupinaObjektu xmlns="hrabud">Základní konstrukční prvek</SkupinaObjektu>
+        <ObsahovaCast xmlns="hrabud">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="hrabud">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <curveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <LinearRing gml:id="ID18_02" srsDimension="3" srsName="EPSG:5514">
+                  <posList>-719895.04 -1051412.08 326.13 -719920.41 -1051404.87 326.54 -719924.10 -1051417.01 326.36 -719896.37 -1051421.47 326.30 -719895.04 -1051412.08 326.13</posList>
+                </LinearRing>
+              </curveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </HraniceBudovy>
+      <BudovaDefinicniBod>
+        <ObjektovyTypNazev code_base="0100000001" code_suffix="04" xmlns="buddef">budova</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="buddef">Budovy</KategorieObjektu>
+        <SkupinaObjektu xmlns="buddef">Objekt budovy</SkupinaObjektu>
+        <ObsahovaCast xmlns="buddef">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="buddef">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuDefinicnichBodu xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+              </SpolecneAtributyObjektuDefinicnichBodu>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID19_04" srsDimension="2" srsName="EPSG:5514">
+                  <pos>-719910.08 -1051413.02</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </BudovaDefinicniBod>
+      <Plot>
+        <ObjektovyTypNazev code_base="0100000162" code_suffix="02" xmlns="plotli">plot</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="plotli">Součásti a příslušenství staveb</KategorieObjektu>
+        <SkupinaObjektu xmlns="plotli">Stavba společná pro více skupin</SkupinaObjektu>
+        <ObsahovaCast xmlns="plotli">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="plotli">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+              <DruhPlotu xmlns="atr">1</DruhPlotu>
+              <HraniceJinehoObjektu xmlns="atr">false</HraniceJinehoObjektu>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <curveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <LineString gml:id="ID20_02" srsDimension="3" srsName="EPSG:5514">
+                  <posList>-719939.03 -1051459.26 321.56 -719964.00 -1051445.55 321.45 -719971.35 -1051441.39 321.56 -719956.41 -1051420.33 321.34</posList>
+                </LineString>
+              </curveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </Plot>
+      <Plot>
+        <ObjektovyTypNazev code_base="0100000162" code_suffix="02" xmlns="plotli">plot</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="plotli">Součásti a příslušenství staveb</KategorieObjektu>
+        <SkupinaObjektu xmlns="plotli">Stavba společná pro více skupin</SkupinaObjektu>
+        <ObsahovaCast xmlns="plotli">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="plotli">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">d</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <ID>2000123456</ID>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+              <DruhPlotu xmlns="atr">1</DruhPlotu>
+              <HraniceJinehoObjektu xmlns="atr">false</HraniceJinehoObjektu>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <curveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <LineString gml:id="ID2000123456_02" srsDimension="3" srsName="EPSG:5514">
+                  <posList>-719954.70 -1051401.23 321.78 -719960.82 -1051417.88 321.89 -719921.40 -1051432.57 321.59</posList>
+                </LineString>
+              </curveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </Plot>
+    </Data>
+    <DoprovodneInformace xmlns="dopinf">
+      <UdajeOZmenach>
+        <ZaznamZmeny>
+          <NazevZakazky>Název zakázky</NazevZakazky>
+          <Zpracovatel>Zpracovatel</Zpracovatel>
+          <OrganizaceZpracovatele>Organizace zpracovatele</OrganizaceZpracovatele>
+          <DatumMereni>2023-10-10</DatumMereni>
+          <DatumZpracovani>2023-10-15</DatumZpracovani>
+          <AZI>9999</AZI>
+          <DatumOvereni>2023-10-15</DatumOvereni>
+          <CisloOvereni>124/2023</CisloOvereni>
+          <OblastZmeny>
+            <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+              <Polygon srsName="EPSG:5514" srsDimension="2" gml:id="ID6_03"> 
+                <exterior> 
+                  <LinearRing> 
+                    <posList>-719921.40 -1051432.57 -719835.70 -1051390.95 -719836.92 -1051426.94 -719896.18 -1051463.91 -719926.54 -1051506.76 -719989.71 -1051467.10 -719988.97 -1051424.25 -719921.40 -1051432.57</posList> 
+                  </LinearRing> 
+                </exterior> 
+              </Polygon> 
+            </surfaceProperty>
+          </OblastZmeny>
+        </ZaznamZmeny>
+      </UdajeOZmenach>
+    </DoprovodneInformace> 
+  </DataJVFDTM>
+</JVFDTM>

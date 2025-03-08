@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ukázka importu kritické infrastruktury -->
+<JVFDTM xmlns="objtyp" xmlns:gml="http://www.opengis.net/gml/3.2">
+  <DataJVFDTM>
+    <VerzeJVFDTM xmlns="cmn">1.4.3</VerzeJVFDTM>
+    <DatumZapisu xmlns="cmn">2023-10-31T15:36:00</DatumZapisu>
+    <TypZapisu xmlns="cmn">změnové věty</TypZapisu>
+    <Data>
+      <PodperneZarizeni>
+        <ObjektovyTypNazev code_base="0100000095" code_suffix="01" xmlns="podzar">podpěrné zařízení</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="podzar">Stavby technické infrastruktury</KategorieObjektu>
+        <SkupinaObjektu xmlns="podzar">Sdílená stavba / objekt technické infrastruktury</SkupinaObjektu>
+        <ObsahovaCast xmlns="podzar">TI</ObsahovaCast>
+        <ZaznamyObjektu xmlns="podzar">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuTI xmlns="atr">
+                <IDVlastnika>SUBJ-00100001</IDVlastnika>
+                <NeuplnaData>0</NeuplnaData>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniTI>1</ZpusobPorizeniTI>
+                <UrovenUmisteniObjektuTI>0</UrovenUmisteniObjektuTI>
+                <KritickaTI>1</KritickaTI>
+              </SpolecneAtributyObjektuTI>
+              <StavObjektu xmlns="atr">1</StavObjektu>
+              <TypPodpernehoZarizeni xmlns="atr">5</TypPodpernehoZarizeni>
+              <TypSloupu xmlns="atr">99</TypSloupu>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <pointProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Point gml:id="ID1_01" srsDimension="3" srsName="EPSG:5514">
+                  <pos>-671692.46 -1115410.82 379.43</pos>
+                </Point>
+              </pointProperty>
+            </GeometrieObjektu>
+            <OblastObjektuKI xmlns="atr">
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID2_06" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-671705.06 -1115394.41 -671691.13 -1115388.11 -671677.87 -1115392.75 -671676.87 -1115406.34 -671686.49 -1115422.92 -671698.43 -1115433.53 -671706.72 -1115421.26 -671706.38 -1115401.70 -671705.06 -1115394.41</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+            </OblastObjektuKI>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </PodperneZarizeni>
+      <TrasaElektrickeSite>
+        <ObjektovyTypNazev code_base="0100000098" code_suffix="02" xmlns="trelsi">trasa elektrické sítě</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="trelsi">Stavby technické infrastruktury</KategorieObjektu>
+        <SkupinaObjektu xmlns="trelsi">Elektrické vedení</SkupinaObjektu>
+        <ObsahovaCast xmlns="trelsi">TI</ObsahovaCast>
+        <ZaznamyObjektu xmlns="trelsi">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">i</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr"/>
+              <SpolecneAtributyObjektuTI xmlns="atr">
+                <IDVlastnika>SUBJ-00100001</IDVlastnika>
+                <NeuplnaData>0</NeuplnaData>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniTI>1</ZpusobPorizeniTI>
+                <UrovenUmisteniObjektuTI>-1</UrovenUmisteniObjektuTI>
+                <KritickaTI>1</KritickaTI>
+              </SpolecneAtributyObjektuTI>
+              <StavTrasySiteTI xmlns="atr">1</StavTrasySiteTI>
+              <PocetVedeniVTrase xmlns="atr">1</PocetVedeniVTrase>
+              <VedeniSiteVJineStavbe xmlns="atr">98</VedeniSiteVJineStavbe>
+              <TypTrasyElektrickeSite xmlns="atr">1</TypTrasyElektrickeSite>
+              <MaximalniNapetovaHladina xmlns="atr">1</MaximalniNapetovaHladina>
+              <MaximalniProvozniNapeti xmlns="atr">99</MaximalniProvozniNapeti>
+              <ProvozniNapeti xmlns="atr">nezjištěno</ProvozniNapeti>
+              <IzolaceVenkovnihoVedeni xmlns="atr">99</IzolaceVenkovnihoVedeni>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <curveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <LineString gml:id="ID3_02" srsDimension="3" srsName="EPSG:5514">
+                  <posList>-671658.08 -1115513.19 323.25 -671603.82 -1115482.85 323.14 -671572.90 -1115461.26 322.85 -671543.73 -1115422.76 323.02 -671513.97 -1115386.00 323.01 -671486.55 -1115339.32 322.95</posList>
+                </LineString>
+              </curveProperty>
+            </GeometrieObjektu>
+            <OblastObjektuKI xmlns="atr">
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID4_06" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-671701.26 -1115545.86 -671635.33 -1115552.86 -671528.56 -1115478.18 -671435.21 -1115348.66 -671474.30 -1115277.48 -671511.06 -1115349.83 -671557.73 -1115416.92 -671634.75 -1115484.60 -671690.76 -1115524.86 -671701.26 -1115545.86</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+            </OblastObjektuKI>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </TrasaElektrickeSite>
+    </Data>
+  </DataJVFDTM>
+</JVFDTM>

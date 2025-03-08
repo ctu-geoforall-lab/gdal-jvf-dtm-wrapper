@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ukázka exportu odvozených ploch -->
+<JVFDTM xmlns="objtyp" xmlns:gml="http://www.opengis.net/gml/3.2">
+  <DataJVFDTM>
+    <VerzeJVFDTM xmlns="cmn">1.4.3</VerzeJVFDTM>
+    <DatumZapisu xmlns="cmn">2023-12-14T08:25:00</DatumZapisu>
+    <TypZapisu xmlns="cmn">kompletní zápis</TypZapisu>
+    <Data>
+      <BudovaPlocha>
+        <ObjektovyTypNazev code_base="0100000001" code_suffix="03" xmlns="budpol">budova</ObjektovyTypNazev>
+        <KategorieObjektu xmlns="budpol">Budovy</KategorieObjektu>
+        <SkupinaObjektu xmlns="budpol">Objekt budovy</SkupinaObjektu>
+        <ObsahovaCast xmlns="budpol">ZPS</ObsahovaCast>
+        <ZaznamyObjektu xmlns="budpol">
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">r</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <DatumVkladu>2023-10-26T06:42:21</DatumVkladu>
+                <DatumZmeny>0001-01-01T00:00:00</DatumZmeny>
+                <ID>72003010000458529</ID>
+                <IDEditora>SUBJ-00002879</IDEditora>
+                <IDZmeny>CZ072-813731</IDZmeny>
+                <VkladOsoba>georeal</VkladOsoba>
+                <ZmenaOsoba/>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID72003010000458529_03" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-520819.39 -1164244.00 -520819.80 -1164248.90 -520834.91 -1164247.58 -520834.71 -1164245.36 -520837.06 -1164245.16 -520839.00 -1164244.99 -520841.21 -1164244.80 -520841.40 -1164246.98 -520856.32 -1164245.68 -520855.95 -1164241.39 -520855.79 -1164239.52 -520855.04 -1164230.91 -520851.95 -1164231.18 -520850.76 -1164231.28 -520840.22 -1164232.21 -520839.19 -1164232.28 -520837.80 -1164232.42 -520818.55 -1164234.10 -520819.39 -1164244.00</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+              <multiCurveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <MultiCurve gml:id="ID72003010000458529_05" srsDimension="3" srsName="EPSG:5514">
+                  <curveMember>
+                    <LineString>
+                      <posList>-520819.39 -1164244.00 274.54 -520819.80 -1164248.90 274.50 -520834.91 -1164247.58 274.25 -520834.71 -1164245.36 274.36 -520837.06 -1164245.16 274.32 -520839.00 -1164244.99 274.33 -520841.21 -1164244.80 274.30 -520841.40 -1164246.98 274.21 -520856.32 -1164245.68 274.26 -520855.95 -1164241.39 274.44 -520855.79 -1164239.52 274.48 -520855.04 -1164230.91 275.14 -520851.95 -1164231.18 274.71 -520850.76 -1164231.28 274.71 -520840.22 -1164232.21 274.73 -520839.19 -1164232.28 274.73 -520837.80 -1164232.42 275.52 -520818.55 -1164234.10 275.63 -520819.39 -1164244.00 274.54</posList>
+                    </LineString>
+                  </curveMember>
+                </MultiCurve>
+              </multiCurveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">r</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <DatumVkladu>2023-10-26T06:42:21</DatumVkladu>
+                <DatumZmeny>0001-01-01T00:00:00</DatumZmeny>
+                <ID>72003010000458738</ID>
+                <IDEditora>SUBJ-00002879</IDEditora>
+                <IDZmeny>CZ072-813731</IDZmeny>
+                <VkladOsoba>georeal</VkladOsoba>
+                <ZmenaOsoba/>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID72003010000458738_03" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-520794.13 -1164236.51 -520786.37 -1164237.12 -520772.08 -1164238.25 -520773.07 -1164250.00 -520773.34 -1164253.14 -520787.07 -1164251.96 -520787.08 -1164252.11 -520787.38 -1164252.08 -520787.20 -1164250.00 -520787.16 -1164249.54 -520788.91 -1164249.39 -520791.30 -1164249.19 -520793.59 -1164248.99 -520793.68 -1164250.00 -520793.80 -1164251.38 -520793.81 -1164251.53 -520794.11 -1164251.51 -520794.10 -1164251.36 -520796.49 -1164251.15 -520809.84 -1164249.87 -520809.39 -1164244.63 -520808.56 -1164235.05 -520794.13 -1164236.51</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+              <multiCurveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <MultiCurve gml:id="ID72003010000458738_05" srsDimension="3" srsName="EPSG:5514">
+                  <curveMember>
+                    <LineString>
+                      <posList>-520794.13 -1164236.51 275.83 -520786.37 -1164237.12 275.17 -520772.08 -1164238.25 275.52 -520773.07 -1164250.00 274.09 -520773.34 -1164253.14 273.91 -520787.07 -1164251.96 274.55 -520787.08 -1164252.11 274.55 -520787.38 -1164252.08 274.55 -520787.20 -1164250.00 274.52 -520787.16 -1164249.54 274.51 -520788.91 -1164249.39 274.53 -520791.30 -1164249.19 274.58 -520793.59 -1164248.99 274.56 -520793.68 -1164250.00 274.52 -520793.80 -1164251.38 274.51 -520793.81 -1164251.53 274.51 -520794.11 -1164251.51 274.53 -520794.10 -1164251.36 274.53 -520796.49 -1164251.15 274.62 -520809.84 -1164249.87 274.64 -520809.39 -1164244.63 274.63 -520808.56 -1164235.05 276.01 -520794.13 -1164236.51 275.83</posList>
+                    </LineString>
+                  </curveMember>
+                </MultiCurve>
+              </multiCurveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">r</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <DatumVkladu>2023-10-26T06:42:21</DatumVkladu>
+                <DatumZmeny>0001-01-01T00:00:00</DatumZmeny>
+                <ID>72003010000458805</ID>
+                <IDEditora>SUBJ-00002879</IDEditora>
+                <IDZmeny>CZ072-813731</IDZmeny>
+                <VkladOsoba>georeal</VkladOsoba>
+                <ZmenaOsoba/>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID72003010000458805_03" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-520786.10 -1164233.25 -520786.33 -1164236.62 -520786.37 -1164237.12 -520794.13 -1164236.51 -520793.62 -1164229.10 -520785.86 -1164229.76 -520786.10 -1164233.25</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+              <multiCurveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <MultiCurve gml:id="ID72003010000458805_05" srsDimension="3" srsName="EPSG:5514">
+                  <curveMember>
+                    <LineString>
+                      <posList>-520786.10 -1164233.25 275.43 -520786.33 -1164236.62 275.22 -520786.37 -1164237.12 275.17 -520794.13 -1164236.51 275.83 -520793.62 -1164229.10 276.34 -520785.86 -1164229.76 276.22 -520786.10 -1164233.25 275.43</posList>
+                    </LineString>
+                  </curveMember>
+                </MultiCurve>
+              </multiCurveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">r</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <DatumVkladu>2023-10-26T06:42:21</DatumVkladu>
+                <DatumZmeny>0001-01-01T00:00:00</DatumZmeny>
+                <ID>72003010000458907</ID>
+                <IDEditora>SUBJ-00002879</IDEditora>
+                <IDZmeny>CZ072-813731</IDZmeny>
+                <VkladOsoba>georeal</VkladOsoba>
+                <ZmenaOsoba/>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID72003010000458907_03" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-520756.15 -1164276.43 -520756.48 -1164276.40 -520757.24 -1164276.33 -520759.32 -1164276.14 -520760.09 -1164276.07 -520760.52 -1164276.03 -520760.32 -1164274.05 -520764.01 -1164273.69 -520763.77 -1164271.20 -520762.82 -1164261.55 -520754.95 -1164262.32 -520755.70 -1164271.60 -520755.82 -1164272.92 -520756.15 -1164276.43</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+              <multiCurveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <MultiCurve gml:id="ID72003010000458907_05" srsDimension="3" srsName="EPSG:5514">
+                  <curveMember>
+                    <LineString>
+                      <posList>-520756.15 -1164276.43 267.61 -520756.48 -1164276.40 267.44 -520757.24 -1164276.33 267.38 -520759.32 -1164276.14 267.25 -520760.09 -1164276.07 267.47 -520760.52 -1164276.03 267.47 -520760.32 -1164274.05 269.87 -520764.01 -1164273.69 269.90 -520763.77 -1164271.20 268.76 -520762.82 -1164261.55 269.57 -520754.95 -1164262.32 269.20 -520755.70 -1164271.60 269.82 -520755.82 -1164272.92 267.99 -520756.15 -1164276.43 267.61</posList>
+                    </LineString>
+                  </curveMember>
+                </MultiCurve>
+              </multiCurveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">r</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <DatumVkladu>2023-10-26T06:42:21</DatumVkladu>
+                <DatumZmeny>0001-01-01T00:00:00</DatumZmeny>
+                <ID>72003010000458615</ID>
+                <IDEditora>SUBJ-00002879</IDEditora>
+                <IDZmeny>CZ072-813731</IDZmeny>
+                <VkladOsoba>georeal</VkladOsoba>
+                <ZmenaOsoba/>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID72003010000458615_03" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-520826.89 -1164208.58 -520826.85 -1164208.09 -520835.52 -1164207.39 -520835.49 -1164207.07 -520835.37 -1164205.72 -520834.52 -1164196.16 -520825.78 -1164196.88 -520821.99 -1164197.19 -520804.84 -1164198.60 -520801.09 -1164198.91 -520792.24 -1164199.64 -520792.88 -1164207.04 -520792.99 -1164207.03 -520793.30 -1164210.82 -520801.93 -1164210.12 -520801.98 -1164210.73 -520801.99 -1164210.78 -520802.07 -1164211.78 -520803.68 -1164211.64 -520805.61 -1164211.47 -520805.71 -1164211.46 -520805.62 -1164210.42 -520805.57 -1164209.82 -520823.06 -1164208.40 -520823.11 -1164208.91 -520823.11 -1164208.99 -520823.20 -1164209.96 -520824.06 -1164209.88 -520826.00 -1164209.72 -520826.13 -1164209.70 -520826.98 -1164209.63 -520826.89 -1164208.58</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+              <multiCurveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <MultiCurve gml:id="ID72003010000458615_05" srsDimension="3" srsName="EPSG:5514">
+                  <curveMember>
+                    <LineString>
+                      <posList>-520826.89 -1164208.58 278.89 -520826.85 -1164208.09 278.89 -520835.52 -1164207.39 279.34 -520835.49 -1164207.07 278.90 -520835.37 -1164205.72 279.02 -520834.52 -1164196.16 279.96 -520825.78 -1164196.88 280.26 -520821.99 -1164197.19 280.28 -520804.84 -1164198.60 280.26 -520801.09 -1164198.91 280.27 -520792.24 -1164199.64 280.33 -520792.88 -1164207.04 279.51 -520792.99 -1164207.03 279.51 -520793.30 -1164210.82 278.93 -520801.93 -1164210.12 278.89 -520801.98 -1164210.73 278.89 -520801.99 -1164210.78 278.89 -520802.07 -1164211.78 278.79 -520803.68 -1164211.64 278.81 -520805.61 -1164211.47 278.84 -520805.71 -1164211.46 278.84 -520805.62 -1164210.42 278.87 -520805.57 -1164209.82 278.93 -520823.06 -1164208.40 278.89 -520823.11 -1164208.91 278.83 -520823.11 -1164208.99 278.83 -520823.20 -1164209.96 278.88 -520824.06 -1164209.88 278.79 -520826.00 -1164209.72 278.96 -520826.13 -1164209.70 278.87 -520826.98 -1164209.63 278.79 -520826.89 -1164208.58 278.89</posList>
+                    </LineString>
+                  </curveMember>
+                </MultiCurve>
+              </multiCurveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+          <ZaznamObjektu>
+            <ZapisObjektu xmlns="cmn">r</ZapisObjektu>
+            <AtributyObjektu>
+              <SpolecneAtributyVsechObjektu xmlns="atr">
+                <DatumVkladu>2023-10-26T06:42:21</DatumVkladu>
+                <DatumZmeny>0001-01-01T00:00:00</DatumZmeny>
+                <ID>72003010000458809</ID>
+                <IDEditora>SUBJ-00002879</IDEditora>
+                <IDZmeny>CZ072-813731</IDZmeny>
+                <VkladOsoba>georeal</VkladOsoba>
+                <ZmenaOsoba/>
+              </SpolecneAtributyVsechObjektu>
+              <SpolecneAtributyObjektuZPS xmlns="atr">
+                <UrovenUmisteniObjektuZPS>0</UrovenUmisteniObjektuZPS>
+                <TridaPresnostiPoloha>3</TridaPresnostiPoloha>
+                <TridaPresnostiVyska>3</TridaPresnostiVyska>
+                <ZpusobPorizeniZPS>1</ZpusobPorizeniZPS>
+              </SpolecneAtributyObjektuZPS>
+            </AtributyObjektu>
+            <GeometrieObjektu>
+              <surfaceProperty xmlns="http://www.opengis.net/gml/3.2">
+                <Polygon gml:id="ID72003010000458809_03" srsDimension="2" srsName="EPSG:5514">
+                  <exterior>
+                    <LinearRing>
+                      <posList>-520792.88 -1164207.04 -520792.24 -1164199.64 -520791.91 -1164195.83 -520783.19 -1164196.58 -520779.46 -1164196.90 -520762.18 -1164198.39 -520758.53 -1164198.71 -520749.68 -1164199.47 -520750.55 -1164210.65 -520759.63 -1164209.88 -520759.66 -1164210.24 -520759.76 -1164211.29 -520761.44 -1164211.13 -520763.11 -1164210.98 -520763.02 -1164210.01 -520762.98 -1164209.59 -520780.22 -1164208.12 -520780.26 -1164208.54 -520780.36 -1164209.64 -520782.25 -1164209.48 -520783.90 -1164209.33 -520784.19 -1164209.31 -520784.06 -1164207.79 -520792.43 -1164207.08 -520792.88 -1164207.04</posList>
+                    </LinearRing>
+                  </exterior>
+                </Polygon>
+              </surfaceProperty>
+              <multiCurveProperty xmlns="http://www.opengis.net/gml/3.2">
+                <MultiCurve gml:id="ID72003010000458809_05" srsDimension="3" srsName="EPSG:5514">
+                  <curveMember>
+                    <LineString>
+                      <posList>-520792.88 -1164207.04 279.51 -520792.24 -1164199.64 280.33 -520791.91 -1164195.83 280.72 -520783.19 -1164196.58 280.73 -520779.46 -1164196.90 280.99 -520762.18 -1164198.39 280.96 -520758.53 -1164198.71 280.83 -520749.68 -1164199.47 280.75 -520750.55 -1164210.65 279.68 -520759.63 -1164209.88 279.69 -520759.66 -1164210.24 279.55 -520759.76 -1164211.29 280.03 -520761.44 -1164211.13 280.03 -520763.11 -1164210.98 280.04 -520763.02 -1164210.01 279.63 -520762.98 -1164209.59 279.67 -520780.22 -1164208.12 279.57 -520780.26 -1164208.54 279.53 -520780.36 -1164209.64 279.49 -520782.25 -1164209.48 279.43 -520783.90 -1164209.33 280.07 -520784.19 -1164209.31 279.41 -520784.06 -1164207.79 279.62 -520792.43 -1164207.08 279.54 -520792.88 -1164207.04 279.51</posList>
+                    </LineString>
+                  </curveMember>
+                </MultiCurve>
+              </multiCurveProperty>
+            </GeometrieObjektu>
+          </ZaznamObjektu>
+        </ZaznamyObjektu>
+      </BudovaPlocha>
+    </Data>
+  </DataJVFDTM>
+</JVFDTM>
