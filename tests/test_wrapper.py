@@ -7,5 +7,4 @@ class TestGdalJvfDtmWrapper:
 
     def test_open(self):
         with GdalJvfDtmWrapper(self.data_dir / "ukazka_ZPS.xml") as wrp:
-            pass
-            # print(wrp.meta)
+            assert wrp.meta['verze'] == '1.4.3'
