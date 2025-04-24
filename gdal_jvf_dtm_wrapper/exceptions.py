@@ -1,0 +1,2 @@
+class GdalJvfDtmWrapperError(Exception):
+    pass
