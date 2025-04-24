@@ -1,2 +1,3 @@
 class GdalJvfDtmWrapperError(Exception):
-    pass
+    def __init__(self, message):
+        super().__init__(f"Invalid JVF DTM: {message}")
