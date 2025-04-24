@@ -15,6 +15,12 @@ ref_layers = {
     'Vodstvo,_vegetace_a_terén#Terénní_útvar#010000021702_Terénní_hrana': ('Curve', 14, 55)
 }
 
+ref_layer = {
+    "name": "Budovy#Objekt_budovy#010000000104_Budova",
+    "gdal_name": "budovadefinicnibod_zaznamyobjektu_zaznamobjektu",
+    "fields": {}
+}
+
 class TestGdalJvfDtmWrapper:
     data_dir = Path(__file__).parent / "sample_data"
     zps_file = data_dir / "ukazka_ZPS.xml"
@@ -25,7 +31,7 @@ class TestGdalJvfDtmWrapper:
             assert wrp.meta['verze'] == '1.4.3'
 
     def test_002_layers(self):
-        """Test number of reported layers."""
+        """Test reported layers."""
         with GdalJvfDtmWrapper(self.zps_file) as wrp:
             # number of reported layers
             assert len(wrp) == 8
@@ -33,16 +39,30 @@ class TestGdalJvfDtmWrapper:
             # check names
             assert list(wrp.layers.keys()) == list(ref_layers.keys())
 
-            for name, lyr in wrp:
+            for name, layer in wrp:
                 ref_data = ref_layers[name]
                 
                 # check geometry type
-                geom_type = lyr.GetGeomType()
+                geom_type = layer.GetGeomType()
                 assert ogr.GeometryTypeToName(geom_type) == ref_data[0]
 
                 # number of attributes
-                layer_defn = lyr.GetLayerDefn()
+                layer_defn = layer.GetLayerDefn()
                 assert layer_defn.GetFieldCount() == ref_data[1]
 
                 # number of features
-                assert lyr.GetFeatureCount() == ref_data[2]
+                assert layer.GetFeatureCount() == ref_data[2]
+
+    def test_003_layer(self):
+        """Test specified layer."""
+        with GdalJvfDtmWrapper(self.zps_file) as wrp:
+            layer = wrp[ref_layer["name"]]
+            assert layer is not None
+            assert layer.GetName() == ref_layer["gdal_name"]
+            # for field in xxx:
+            #     print(field.GetName())
+            layer_defn = layer.GetLayerDefn()
+            for i in range(layer_defn.GetFieldCount()):
+                field_defn = layer_defn.GetFieldDefn(i)
+                # print(field_defn.GetName())
+                

@@ -8,6 +8,7 @@ gdal.UseExceptions()
 
 from .exceptions import GdalJvfDtmWrapperError
 from .logger import Logger
+from .parse_xsd import XsdParser
 
 class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     def __init__(self, filename):
@@ -23,6 +24,9 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         if self._ds.GetLayer(0).GetName() != "jvfdtm":
             raise GdalJvfDtmWrapperError("layer 'jvfdtm' not found")
 
+        # parse XSD
+        self.xsd_parser = XsdParser(xsd_path)
+                
         self.meta = self._read_metadata()
         Logger.info(f"Version {self.meta['verze']} detected")
         self.layers = self._read_layers()
@@ -64,20 +68,20 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
 
     def _read_layers(self):
         layers = OrderedDict()
-        for lyr in self._ds:
-            if 'zaznamyobjektu' not in lyr.GetName():
+        for layer in self._ds:
+            if 'zaznamyobjektu' not in layer.GetName():
                 continue
-            meta_lyr = self._ds.GetLayerByName(lyr.GetName().split('_')[0])
+            meta_layer = self._ds.GetLayerByName(layer.GetName().split('_')[0])
             layer_name = None
-            if meta_lyr is None:
-                Logger.error(f"No metadata found for {lyr.GetName()}")
-                layer_name = lyr.GetName() # use original name when no metadata found
+            if meta_layer is None:
+                Logger.error(f"No metadata found for {layer.GetName()}")
+                layer_name = layer.GetName() # use original name when no metadata found
             else:
-                feat_count = len(meta_lyr)
+                feat_count = len(meta_layer)
                 if feat_count != 1:
-                    Logger.warning(f"Unexpected feature count in {meta_lyr.GetName()}: {len(meta_lyr)}")
+                    Logger.warning(f"Unexpected feature count in {meta_layer.GetName()}: {len(meta_layer)}")
                 if feat_count > 0:
-                    meta_feat = meta_lyr.GetNextFeature()
+                    meta_feat = meta_layer.GetNextFeature()
                     layer_name = "{}#{}#{}{}_{}".format(
                         meta_feat.GetField("kategorieobjektu").replace(' ', '_'),
                         meta_feat.GetField("skupinaobjektu").replace(' ', '_'),
@@ -85,8 +89,15 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                         meta_feat.GetField("objektovytypnazev_code_suffix"),
                         meta_feat.GetField("objektovytypnazev").capitalize().replace(' ', '_'),
                     )
+                    
+                    layer_defn = layer.GetLayerDefn()
+                    print(layer.GetName())
+                    for i in range(layer_defn.GetFieldCount()):
+                        field_defn = layer_defn.GetFieldDefn(i)
+                        print("\t", field_defn.GetName(), self.xsd_parser.fieldName(field_defn.GetName()))
+                        # field_defn.SetName(f"novy_nazev{i}")
 
-            layers[layer_name] = lyr
+            layers[layer_name] = layer
 
         return layers
 
@@ -95,3 +106,6 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
 
     def __iter__(self):
         return iter(self.layers.items())
+
+    def __getitem__(self, key):
+        return self.layers[key]

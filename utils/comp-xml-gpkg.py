@@ -26,38 +26,39 @@ def main(input_xml, ref_gpkg):
 
         # compare JVF vs GPKG
         imp_layers = {}
-        for lyr_name, lyr in inp:
-            layer_defn = lyr.GetLayerDefn()
+        for layer_name, layer in inp:
+            layer_defn = layer.GetLayerDefn()
 
-            lyr_gpkg = ds_gpkg.GetLayerByName(lyr_name)
-            if lyr_gpkg is None:
-                error(f"Layer '{lyr_name}' not found in GPKG reference")
+            layer_gpkg = ds_gpkg.GetLayerByName(layer_name)
+            if layer_gpkg is None:
+                error(f"Layer '{layer_name}' not found in GPKG reference")
                 continue
 
-            lyr_name_gdal = lyr.GetName()
-            if lyr.GetGeomType() != lyr_gpkg.GetGeomType():
-                inconsistency_error(lyr_name, lyr_name_gdal, "geometry_type",
-                                    ogr.GeometryTypeToName(lyr.GetGeomType()),
-                                    ogr.GeometryTypeToName(lyr_gpkg.GetGeomType()))
-            layer_defn_gpkg = lyr_gpkg.GetLayerDefn()
+            layer_name_gdal = layer.GetName()
+            if layer.GetGeomType() != layer_gpkg.GetGeomType():
+                inconsistency_error(layer_name, layer_name_gdal, "geometry_type",
+                                    ogr.GeometryTypeToName(layer.GetGeomType()),
+                                    ogr.GeometryTypeToName(layer_gpkg.GetGeomType()))
+            layer_defn_gpkg = layer_gpkg.GetLayerDefn()
             if layer_defn.GetFieldCount() != layer_defn_gpkg.GetFieldCount():
-                inconsistency_error(lyr_name, lyr_name_gdal, "field count",
+                inconsistency_error(layer_name, layer_name_gdal, "field count",
                                     layer_defn.GetFieldCount(),
                                     layer_defn_gpkg.GetFieldCount())
-            if lyr.GetFeatureCount() != lyr_gpkg.GetFeatureCount():
-                inconsistency_error(lyr_name, lyr_name_gdal, "feature count",
-                                    lyr.GetFeatureCount(),
-                                    lyr_gpkg.GetFeatureCount())
+            if layer.GetFeatureCount() != layer_gpkg.GetFeatureCount():
+                inconsistency_error(layer_name, layer_name_gdal, "feature count",
+                                    layer.GetFeatureCount(),
+                                    layer_gpkg.GetFeatureCount())
 
+            # TODO: field_names
             # TODO: field types
             # TODO: features
-            break
+            break\
 
         # compare GPKG vs JVF
-        for lyr in ds_gpkg:
-            lyr_name = lyr.GetName()
-            if lyr_name not in inp.layers.keys():
-                error(f"Reference layer {lyr_name} not found in JVF DTM")
+        for layer in ds_gpkg:
+            layer_name = layer.GetName()
+            if layer_name not in inp.layers.keys():
+                error(f"Reference layer {layer_name} not found in JVF DTM")
 
     # close ref data
     ds_gpkg.Close()
