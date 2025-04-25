@@ -64,5 +64,5 @@ class TestGdalJvfDtmWrapper:
             layer_defn = layer.GetLayerDefn()
             for i in range(layer_defn.GetFieldCount()):
                 field_defn = layer_defn.GetFieldDefn(i)
-                # print(field_defn.GetName())
+                print(field_defn.GetName())
                 

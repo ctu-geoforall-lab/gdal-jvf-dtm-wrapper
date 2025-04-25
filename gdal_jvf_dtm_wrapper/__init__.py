@@ -66,6 +66,12 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
 
         return meta
 
+    def fieldName(self, layer_name, field_name):
+        try:
+            return self.fields[layer_name]
+        except KeyError:
+            return None
+
     def _read_layers(self):
         layers = OrderedDict()
         for layer in self._ds:
@@ -91,11 +97,15 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                     )
                     
                     layer_defn = layer.GetLayerDefn()
-                    print(layer.GetName())
+                    layer_name_gdal = layer.GetName()
                     for i in range(layer_defn.GetFieldCount()):
                         field_defn = layer_defn.GetFieldDefn(i)
-                        print("\t", field_defn.GetName(), self.xsd_parser.fieldName(field_defn.GetName()))
-                        # field_defn.SetName(f"novy_nazev{i}")
+                        field_name = field_defn.GetName()
+                        # TODO: some attributes cannot be match due to types
+                        # field_defn.SetName())
+                        if field_name.startswith(('atributyobjektu', 'atribuobjekt')):
+                            # new_field_name = self.xsd_parser.fieldName(layer_name_gdal, field_name)
+                            field_defn.SetName(field_name.split('_')[-1])
 
             layers[layer_name] = layer
 
