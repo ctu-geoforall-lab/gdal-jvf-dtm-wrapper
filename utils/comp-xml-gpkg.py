@@ -53,9 +53,10 @@ def main(input_xml, ref_gpkg):
                                     ogr.GeometryTypeToName(layer.GetGeomType()),
                                     ogr.GeometryTypeToName(layer_gpkg.GetGeomType()))
             layer_defn_gpkg = layer_gpkg.GetLayerDefn()
-            if layer_defn.GetFieldCount() != layer_defn_gpkg.GetFieldCount():
+            layer_field_count = len(inp.fields(layer_name))
+            if layer_field_count != layer_defn_gpkg.GetFieldCount():
                 inconsistency_error(layer_name, layer_name_gdal, "field count",
-                                    layer_defn.GetFieldCount(),
+                                    layer_field_count,
                                     layer_defn_gpkg.GetFieldCount())
             if layer.GetFeatureCount() != layer_gpkg.GetFeatureCount():
                 inconsistency_error(layer_name, layer_name_gdal, "feature count",
