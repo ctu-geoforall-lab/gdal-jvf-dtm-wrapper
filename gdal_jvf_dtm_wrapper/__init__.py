@@ -14,12 +14,13 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     def __init__(self, filename):
         self._filename = filename
         xsd_path = Path(__file__).parent / "xsd" / "index" / "index_data.xsd"
+        gdal.SetConfigOption('CPL_LOG', '/dev/null') # discard warning
+        gdal.SetConfigOption('OGR_GMLAS_XERCES_MAX_TIME', '0')
         self._ds = gdal.OpenEx(filename, gdal.GA_ReadOnly | gdal.OF_VECTOR,
                                allowed_drivers=["GMLAS"],
                                open_options=[
                                    f"XSD={str(xsd_path)}",
-                                   "REMOVE_UNUSED_LAYERS=YES",
-                                   "OGR_GMLAS_XERCES_MAX_TIME=5"
+                                   "REMOVE_UNUSED_LAYERS=YES"
                                ]
         )
 
