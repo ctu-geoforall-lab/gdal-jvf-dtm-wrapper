@@ -69,12 +69,6 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
 
         return meta
 
-    def fieldName(self, layer_name, field_name):
-        try:
-            return self.fields[layer_name]
-        except KeyError:
-            return None
-
     def _read_layers(self):
         layers = OrderedDict()
         for layer in self._ds:
@@ -122,3 +116,13 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
 
     def __getitem__(self, key):
         return self.layers[key]
+
+    def fields(self, layer_name):
+        fields = []
+        layer_defn = self.layers[layer_name].GetLayerDefn()
+        for idx in range(layer_defn.GetFieldCount()):
+            field_defn = layer_defn.GetFieldDefn(idx)
+            if 'ogr_pkid' not in field_defn.GetName():
+                fields.append(field_defn.GetName())
+
+        return fields

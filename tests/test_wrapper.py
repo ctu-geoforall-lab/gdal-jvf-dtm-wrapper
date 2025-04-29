@@ -5,20 +5,22 @@ from osgeo import ogr
 from gdal_jvf_dtm_wrapper import GdalJvfDtmWrapper
 
 ref_layers = {
-    'Budovy#Objekt_budovy#010000000104_Budova': ('Point', 10, 6), # geom type, field count, feature count
-    'Rekreační,_kulturní_a_sakrální_stavby#Stavba_kulturní,_sakrální#010000015901_Drobná_kulturní_stavba': ('Point', 14, 24),
-    'Konstrukční_prvky_objektů#Základní_konstrukční_prvek#010000029902_Hranice_budovy': ('Curve', 13, 64),
-    'Konstrukční_prvky_objektů#Základní_konstrukční_prvek#010000030402_Hranice_dopravní_stavby_nebo_plochy': ('Curve', 14, 236),
-    'Konstrukční_prvky_objektů#Základní_konstrukční_prvek#010000030102_Hranice_schodiště': ('Curve', 14, 112),
-    'Součásti_a_příslušenství_staveb#Stavba_společná_pro_více_skupin#010000016202_Plot': ('Curve', 15, 21),
+    'Budovy#Objekt_budovy#010000000104_Budova': ('Point', 11, 6), # geom type, field count, feature count
+    'Rekreační,_kulturní_a_sakrální_stavby#Stavba_kulturní,_sakrální#010000015901_Drobná_kulturní_stavba': ('Point', 15, 24),
+    'Konstrukční_prvky_objektů#Základní_konstrukční_prvek#010000029902_Hranice_budovy': ('Curve', 14, 64),
+    'Konstrukční_prvky_objektů#Základní_konstrukční_prvek#010000030402_Hranice_dopravní_stavby_nebo_plochy': ('Curve', 15, 236),
+    'Konstrukční_prvky_objektů#Základní_konstrukční_prvek#010000030102_Hranice_schodiště': ('Curve', 15, 112),
+    'Součásti_a_příslušenství_staveb#Stavba_společná_pro_více_skupin#010000016202_Plot': ('Curve', 16, 21),
     'Geodetické_prvky#Podrobný_bod#010000021801_Podrobný_bod_zps': ('Point', 14, 893),
-    'Vodstvo,_vegetace_a_terén#Terénní_útvar#010000021702_Terénní_hrana': ('Curve', 14, 55)
+    'Vodstvo,_vegetace_a_terén#Terénní_útvar#010000021702_Terénní_hrana': ('Curve', 15, 55)
 }
 
 ref_layer = {
     "name": "Budovy#Objekt_budovy#010000000104_Budova",
     "gdal_name": "budovadefinicnibod_zaznamyobjektu_zaznamobjektu",
-    "fields": {}
+    "fields": ['zapisobjektu', 'id', 'idzmeny', 'popisobjektu',
+               'ideditora', 'datumvkladu', 'vkladosoba', 'datumzmeny',
+               'zmenaosoba', 'urovenumisteni', 'ics']
 }
 
 class TestGdalJvfDtmWrapper:
@@ -47,8 +49,7 @@ class TestGdalJvfDtmWrapper:
                 assert ogr.GeometryTypeToName(geom_type) == ref_data[0]
 
                 # number of attributes
-                layer_defn = layer.GetLayerDefn()
-                assert layer_defn.GetFieldCount() == ref_data[1]
+                assert len(wrp.fields(name)) == ref_data[1]
 
                 # number of features
                 assert layer.GetFeatureCount() == ref_data[2]
@@ -59,10 +60,4 @@ class TestGdalJvfDtmWrapper:
             layer = wrp[ref_layer["name"]]
             assert layer is not None
             assert layer.GetName() == ref_layer["gdal_name"]
-            # for field in xxx:
-            #     print(field.GetName())
-            layer_defn = layer.GetLayerDefn()
-            for i in range(layer_defn.GetFieldCount()):
-                field_defn = layer_defn.GetFieldDefn(i)
-                print(field_defn.GetName())
-                
+            assert wrp.fields(ref_layer["name"]) == ref_layer["fields"]
