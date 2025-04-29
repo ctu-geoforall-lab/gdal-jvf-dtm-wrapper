@@ -18,7 +18,9 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                                allowed_drivers=["GMLAS"],
                                open_options=[
                                    f"XSD={str(xsd_path)}",
-                                   "REMOVE_UNUSED_LAYERS=YES"]
+                                   "REMOVE_UNUSED_LAYERS=YES",
+                                   "OGR_GMLAS_XERCES_MAX_TIME=5"
+                               ]
         )
 
         if self._ds.GetLayer(0).GetName() != "jvfdtm":
