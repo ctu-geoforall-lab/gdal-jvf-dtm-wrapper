@@ -14,7 +14,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     def __init__(self, filename):
         self._filename = filename
         xsd_path = Path(__file__).parent / "xsd" / "index" / "index_data.xsd"
-        self._ds = gdal.OpenEx(filename, gdal.GA_ReadOnly,
+        self._ds = gdal.OpenEx(filename, gdal.GA_ReadOnly | gdal.OF_VECTOR,
                                allowed_drivers=["GMLAS"],
                                open_options=[
                                    f"XSD={str(xsd_path)}",
