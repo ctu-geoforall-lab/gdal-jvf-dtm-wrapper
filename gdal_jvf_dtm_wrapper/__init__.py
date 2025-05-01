@@ -13,7 +13,11 @@ from .parse_xsd import XsdParser
 class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     field_blacklist = ["ogr_pkid", "parent_ogr_pkid", "ZapisObjektu"]
 
-    def __init__(self, filename):
+    def __init__(self, filename: str):
+        """Initialize GDAL JVF DTM wrapper.
+
+        :param str filename: input data in JVF DTM
+        """
         self._filename = filename
         xsd_path = Path(__file__).parent / "xsd" / "index" / "index_data.xsd"
         conf_path = Path(__file__).parent / "gmlasconf.xml"
@@ -54,6 +58,8 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         super().__exit__(exc_type, exc_val, exc_tb)
 
     def _read_metadata(self):
+        """Read metadata.
+        """
         lyr_name = "DATAJVFDTM"
         lyr = self._ds.GetLayerByName(lyr_name)
         if lyr is None:
@@ -74,6 +80,8 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         return meta
 
     def _read_layers(self):
+        """Process GDAL layers.
+        """
         layers = OrderedDict()
         for layer in self._ds:
             if 'ZaznamyObjektu' not in layer.GetName():
@@ -105,13 +113,10 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                     for i in range(layer_defn.GetFieldCount()):
                         field_defn = layer_defn.GetFieldDefn(i)
                         field_name = field_defn.GetName()
-                        # TODO: some attributes cannot be match due to types
-                        # field_defn.SetName())
                         if field_name.startswith('AtributyObjektu'):
                             new_field_name = self.xsd_parser.fieldName(layer_name_gdal, field_name)
                             if new_field_name:
                                 field_defn.SetName(new_field_name)
-                            # field_defn.SetName(field_name.split('_')[-1])
 
             layers[layer_name] = layer
 
@@ -126,7 +131,13 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     def __getitem__(self, key):
         return self.layers[key]
 
-    def fields(self, layer_name):
+    def fields(self, layer_name: str) -> list:
+        """Get fields for specified layer.
+
+        :param str layer_name: layer name
+
+        :return list: list of fields for specified layer
+        """
         fields = []
         layer_defn = self.layers[layer_name].GetLayerDefn()
         for idx in range(layer_defn.GetFieldCount()):
