@@ -14,12 +14,14 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     def __init__(self, filename):
         self._filename = filename
         xsd_path = Path(__file__).parent / "xsd" / "index" / "index_data.xsd"
+        conf_path = Path(__file__).parent / "gmlasconf.xml"
         gdal.SetConfigOption('CPL_LOG', '/dev/null') # discard warning
         gdal.SetConfigOption('OGR_GMLAS_XERCES_MAX_TIME', '0')
         self._ds = gdal.OpenEx(filename, gdal.GA_ReadOnly | gdal.OF_VECTOR,
                                allowed_drivers=["GMLAS"],
                                open_options=[
                                    f"XSD={str(xsd_path)}",
+                                   f"CONFIG_FILE={str(conf_path)}",
                                    "REMOVE_UNUSED_LAYERS=YES"
                                ]
         )
@@ -101,8 +103,10 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                         # TODO: some attributes cannot be match due to types
                         # field_defn.SetName())
                         if field_name.startswith(('atributyobjektu', 'atribuobjekt')):
-                            # new_field_name = self.xsd_parser.fieldName(layer_name_gdal, field_name)
-                            field_defn.SetName(field_name.split('_')[-1])
+                            new_field_name = self.xsd_parser.fieldName(layer_name_gdal, field_name)
+                            if new_field_name:
+                                field_defn.SetName(new_field_name)
+                            # field_defn.SetName(field_name.split('_')[-1])
 
             layers[layer_name] = layer
 
