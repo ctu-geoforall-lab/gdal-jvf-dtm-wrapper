@@ -25,7 +25,9 @@ def collect_fields(layer):
     layer_defn = layer.GetLayerDefn()
     for i in range(layer_defn.GetFieldCount()):
         field_defn = layer_defn.GetFieldDefn(i)
-        fields[field_defn.GetName().lower()] = field_defn.GetTypeName()
+        if field_defn.IsIgnored():
+            continue
+        fields[field_defn.GetName()] = field_defn.GetTypeName()
     return fields
 
 def main(input_xml, ref_gpkg):
@@ -49,7 +51,7 @@ def main(input_xml, ref_gpkg):
 
             layer_name_gdal = layer.GetName()
             if layer.GetGeomType() != layer_gpkg.GetGeomType():
-                inconsistency_error(layer_name, layer_name_gdal, "geometry_type",
+                inconsistency_error(layer_name, layer_name_gdal, "geometry type",
                                     ogr.GeometryTypeToName(layer.GetGeomType()),
                                     ogr.GeometryTypeToName(layer_gpkg.GetGeomType()))
             layer_defn_gpkg = layer_gpkg.GetLayerDefn()
@@ -74,7 +76,7 @@ def main(input_xml, ref_gpkg):
                     extra.append(fname)
                 else:
                     if ftype != fields_gpkg[fname]:
-                        mismatch_type.append(fname)
+                        mismatch_type.append(f"{fname} (JVFDTM: {ftype}; GPKG: {fields_gpkg[fname]})")
             if extra:
                 inconsistency_error(layer_name, layer_name_gdal, "field names (not found in reference)",
                                     ','.join(extra), None)
@@ -82,8 +84,40 @@ def main(input_xml, ref_gpkg):
                 inconsistency_error(layer_name, layer_name_gdal, "field types",
                                     ','.join(mismatch_type), None)
 
-            # TODO: features
-            break
+            while True:
+                feat = layer.GetNextFeature()
+                if feat is None:
+                    break
+
+                feat_id = feat.GetField("ID")
+                layer_gpkg.SetAttributeFilter(f"ID = {feat_id}")
+                feat_gpkg = layer_gpkg.GetNextFeature()
+                if feat_gpkg is None:
+                    inconsistency_error(layer_name, layer_name_gdal, "feature (ID) not found",
+                                        feat_id, None)
+                    continue
+
+                # comp geometry
+                geom = feat.GetGeometryRef()
+                geom.FlattenTo2D()
+                geom_gpkg = feat_gpkg.GetGeometryRef()
+                geom_gpkg.FlattenTo2D()
+                if geom.Equals(geom_gpkg) is False:
+                    inconsistency_error(layer_name, layer_name_gdal, "geometries not equal",
+                                        feat.GetFID(), None)
+
+                # comp fields
+                for i in range(layer_defn.GetFieldCount()):
+                    field_defn = layer_defn.GetFieldDefn(i)
+                    if field_defn.IsIgnored():
+                        continue
+                    field_name = field_defn.GetName()
+                    value_gpkg = feat_gpkg.GetField(field_name)
+                    if str(feat.GetField(i)) != str(value_gpkg):
+                        inconsistency_error(layer_name, layer_name_gdal,
+                                            f"field ({field_name}) values",
+                                            feat.GetField(i), value_gpkg)
+            print('-' * 80)
 
         # compare GPKG vs JVF
         for layer in ds_gpkg:

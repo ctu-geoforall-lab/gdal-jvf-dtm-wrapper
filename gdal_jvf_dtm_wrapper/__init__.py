@@ -96,7 +96,10 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                         meta_feat.GetField("ObjektovyTypNazev_code_suffix"),
                         meta_feat.GetField("ObjektovyTypNazev").capitalize().replace(' ', '_'),
                     )
-                    
+
+                    # TODO: OLCIgnoreFields not supported by GDAL
+                    layer.SetIgnoredFields(self.field_blacklist)
+
                     layer_defn = layer.GetLayerDefn()
                     layer_name_gdal = layer.GetName()
                     for i in range(layer_defn.GetFieldCount()):
@@ -128,7 +131,8 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         layer_defn = self.layers[layer_name].GetLayerDefn()
         for idx in range(layer_defn.GetFieldCount()):
             field_defn = layer_defn.GetFieldDefn(idx)
-            if field_defn.GetName() not in self.field_blacklist:
-                fields.append(field_defn.GetName())
+            if field_defn.IsIgnored():
+                continue
+            fields.append(field_defn.GetName())
 
         return fields

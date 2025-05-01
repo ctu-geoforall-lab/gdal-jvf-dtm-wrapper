@@ -30,6 +30,22 @@ ref_layer = {
                 'ICS']
 }
 
+ref_feature = {
+    "x": -520789.9,
+    "y": -1164233.09,
+    "fields" : ['72000010000118579',
+                'CZ072-813731',
+                None,
+                'SUBJ-00002879',
+                '2023/10/26 06:42:21',
+                'georeal',
+                '0001/01/01 00:00:00',
+                None,
+                0,
+                None
+    ]
+}
+
 class TestGdalJvfDtmWrapper:
     data_dir = Path(__file__).parent / "sample_data"
     zps_file = data_dir / "ukazka_ZPS.xml"
@@ -68,3 +84,18 @@ class TestGdalJvfDtmWrapper:
             assert layer is not None
             assert layer.GetName() == ref_layer["gdal_name"]
             assert wrp.fields(ref_layer["name"]) == ref_layer["fields"]
+
+            # features
+            layer_defn = layer.GetLayerDefn()
+            feat = layer.GetNextFeature()
+            geom = feat.GetGeometryRef()
+            assert geom.GetX() == ref_feature["x"]
+            assert geom.GetY() == ref_feature["y"]
+
+            fields = []
+            for i in range(layer_defn.GetFieldCount()):
+                field_defn = layer_defn.GetFieldDefn(i)
+                if field_defn.IsIgnored():
+                    continue
+                fields.append(feat.GetField(i))
+            assert fields == ref_feature["fields"]
