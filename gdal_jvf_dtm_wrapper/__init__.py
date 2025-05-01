@@ -11,6 +11,8 @@ from .logger import Logger
 from .parse_xsd import XsdParser
 
 class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
+    field_blacklist = ["ogr_pkid", "parent_ogr_pkid", "ZapisObjektu"]
+
     def __init__(self, filename):
         self._filename = filename
         xsd_path = Path(__file__).parent / "xsd" / "index" / "index_data.xsd"
@@ -26,8 +28,8 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                                ]
         )
 
-        if self._ds.GetLayer(0).GetName() != "jvfdtm":
-            raise GdalJvfDtmWrapperError("layer 'jvfdtm' not found")
+        if self._ds.GetLayer(0).GetName() != "JVFDTM":
+            raise GdalJvfDtmWrapperError("layer 'JVFDTM' not found")
 
         # parse XSD
         self.xsd_parser = XsdParser(xsd_path)
@@ -52,7 +54,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         super().__exit__(exc_type, exc_val, exc_tb)
 
     def _read_metadata(self):
-        lyr_name = "datajvfdtm"
+        lyr_name = "DATAJVFDTM"
         lyr = self._ds.GetLayerByName(lyr_name)
         if lyr is None:
             raise GdalJvfDtmWrapperError(f"Unable to read metadata {lyr_name}")
@@ -63,9 +65,9 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
 
         feat = lyr.GetNextFeature()
         meta = {
-            "verze": feat["verzejvfdtm"],
-            "datumzapisu": feat["datumzapisu"],
-            "typzapisu": feat["typzapisu"]
+            "verze": feat["VerzeJVFDTM"],
+            "datumzapisu": feat["DatumZapisu"],
+            "typzapisu": feat["TypZapisu"]
         }
         feat = None
 
@@ -74,7 +76,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
     def _read_layers(self):
         layers = OrderedDict()
         for layer in self._ds:
-            if 'zaznamyobjektu' not in layer.GetName():
+            if 'ZaznamyObjektu' not in layer.GetName():
                 continue
             meta_layer = self._ds.GetLayerByName(layer.GetName().split('_')[0])
             layer_name = None
@@ -88,11 +90,11 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                 if feat_count > 0:
                     meta_feat = meta_layer.GetNextFeature()
                     layer_name = "{}#{}#{}{}_{}".format(
-                        meta_feat.GetField("kategorieobjektu").replace(' ', '_'),
-                        meta_feat.GetField("skupinaobjektu").replace(' ', '_'),
-                        meta_feat.GetField("objektovytypnazev_code_base"),
-                        meta_feat.GetField("objektovytypnazev_code_suffix"),
-                        meta_feat.GetField("objektovytypnazev").capitalize().replace(' ', '_'),
+                        meta_feat.GetField("KategorieObjektu").replace(' ', '_'),
+                        meta_feat.GetField("SkupinaObjektu").replace(' ', '_'),
+                        meta_feat.GetField("ObjektovyTypNazev_code_base"),
+                        meta_feat.GetField("ObjektovyTypNazev_code_suffix"),
+                        meta_feat.GetField("ObjektovyTypNazev").capitalize().replace(' ', '_'),
                     )
                     
                     layer_defn = layer.GetLayerDefn()
@@ -102,7 +104,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                         field_name = field_defn.GetName()
                         # TODO: some attributes cannot be match due to types
                         # field_defn.SetName())
-                        if field_name.startswith(('atributyobjektu', 'atribuobjekt')):
+                        if field_name.startswith('AtributyObjektu'):
                             new_field_name = self.xsd_parser.fieldName(layer_name_gdal, field_name)
                             if new_field_name:
                                 field_defn.SetName(new_field_name)
@@ -126,7 +128,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         layer_defn = self.layers[layer_name].GetLayerDefn()
         for idx in range(layer_defn.GetFieldCount()):
             field_defn = layer_defn.GetFieldDefn(idx)
-            if 'ogr_pkid' not in field_defn.GetName():
+            if field_defn.GetName() not in self.field_blacklist:
                 fields.append(field_defn.GetName())
 
         return fields

@@ -74,7 +74,7 @@ def main(input_xml, ref_gpkg):
                     extra.append(fname)
                 else:
                     if ftype != fields_gpkg[fname]:
-                        mismatch_type(fname)
+                        mismatch_type.append(fname)
             if extra:
                 inconsistency_error(layer_name, layer_name_gdal, "field names (not found in reference)",
                                     ','.join(extra), None)

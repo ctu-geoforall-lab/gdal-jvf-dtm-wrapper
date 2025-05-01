@@ -17,10 +17,17 @@ ref_layers = {
 
 ref_layer = {
     "name": "Budovy#Objekt_budovy#010000000104_Budova",
-    "gdal_name": "budovadefinicnibod_zaznamyobjektu_zaznamobjektu",
-    "fields": ['zapisobjektu', 'id', 'idzmeny', 'popisobjektu',
-               'ideditora', 'datumvkladu', 'vkladosoba', 'datumzmeny',
-               'zmenaosoba', 'urovenumisteni', 'ics']
+    "gdal_name": "BudovaDefinicniBod_ZaznamyObjektu_ZaznamObjektu",
+    "fields": [ 'ID',
+                'IDZmeny',
+                'PopisObjektu',
+                'IDEditora',
+                'DatumVkladu',
+                'VkladOsoba',
+                'DatumZmeny',
+                'ZmenaOsoba',
+                'UrovenUmisteniObjektuZPS',
+                'ICS']
 }
 
 class TestGdalJvfDtmWrapper:

@@ -7,7 +7,7 @@ class XsdParser:
         # collect elements
         self.elements = {}
         for name, element in schema.elements.items():
-            current = self.elements[name.lower()] = {}
+            current = self.elements[name] = {}
             self._add_element(current, element)
 
     def _add_element(self, current, element):
@@ -16,9 +16,9 @@ class XsdParser:
                 continue
             if len(e.findall('*')) < 1:
                 # no childeren
-                current[e.local_name.lower()] = e.local_name
+                current[e.local_name] = e.local_name
             else:
-                new = current[e.local_name.lower()] = {}
+                new = current[e.local_name] = {}
                 self._add_element(new, e)
 
     def fieldName(self, layer_name, field_name):
@@ -28,7 +28,7 @@ class XsdParser:
             return None
 
         try:
-            element = self.elements[layer_name.split('_')[0]]['zaznamyobjektu']['zaznamobjektu']
+            element = self.elements[layer_name.split('_')[0]]['ZaznamyObjektu']['ZaznamObjektu']
             for p in parts:
                 element = element[p]
             return element
