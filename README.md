@@ -1,4 +1,4 @@
-# GDAL wrapper for JVF DTM
+# GDAL Python wrapper pro JVF DTM
 
 **Experimentální** prototyp Python wrapperu (API)
 
