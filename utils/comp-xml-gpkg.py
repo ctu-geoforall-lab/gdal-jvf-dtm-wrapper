@@ -69,17 +69,17 @@ def main(input_xml, ref_gpkg):
             fields = collect_fields(layer)
             fields_gpkg = collect_fields(layer_gpkg)
 
-            extra = []
+            fields_extra = []
             mismatch_type = []
             for fname, ftype in fields.items():
                 if fname not in fields_gpkg.keys():
-                    extra.append(fname)
+                    fields_extra.append(fname)
                 else:
                     if ftype != fields_gpkg[fname]:
                         mismatch_type.append(f"{fname} (JVFDTM: {ftype}; GPKG: {fields_gpkg[fname]})")
-            if extra:
+            if fields_extra:
                 inconsistency_error(layer_name, layer_name_gdal, "field names (not found in reference)",
-                                    ','.join(extra), None)
+                                    ','.join(fields_extra), None)
             if mismatch_type:
                 inconsistency_error(layer_name, layer_name_gdal, "field types",
                                     ','.join(mismatch_type), None)
@@ -112,12 +112,14 @@ def main(input_xml, ref_gpkg):
                     if field_defn.IsIgnored():
                         continue
                     field_name = field_defn.GetName()
+                    if field_name in fields_extra:
+                        continue
                     value_gpkg = feat_gpkg.GetField(field_name)
                     if str(feat.GetField(i)) != str(value_gpkg):
                         inconsistency_error(layer_name, layer_name_gdal,
                                             f"field ({field_name}) values",
                                             feat.GetField(i), value_gpkg)
-            print('-' * 80)
+            print('-' * 80, file=sys.stderr)
 
         # compare GPKG vs JVF
         for layer in ds_gpkg:
