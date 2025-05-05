@@ -27,8 +27,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
                                allowed_drivers=["GMLAS"],
                                open_options=[
                                    f"XSD={str(xsd_path)}",
-                                   f"CONFIG_FILE={str(conf_path)}",
-                                   "REMOVE_UNUSED_LAYERS=YES"
+                                   f"CONFIG_FILE={str(conf_path)}"
                                ]
         )
 
