@@ -23,7 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        apt-get -y update
+        apt-get update
         apt-get -y install python3-gdal
         python3 -m pip install pytest
         python3 -m pip install -r requirements.txt
