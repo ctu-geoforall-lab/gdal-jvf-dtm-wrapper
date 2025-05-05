@@ -16,12 +16,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-   - name: Set up Docker
-        run: |
+    - name: Set up Docker
+      run: |
           docker pull ghcr.io/osgeo/gdal:ubuntu-small-3.10.3
 
-   - name: Run test
-        run: |
+    - name: Run test
+      run: |
           docker run --rm -v ${{ github.workspace }}:/gdal-jvf-dtm-wrapper -w /gdal-jvf-dtm-wrapper \
-           ghcr.io/osgeo/gdal:ubuntu-small-3.10.3 \
-           python3 -m pytest tests/test_wrapper -v
+          ghcr.io/osgeo/gdal:ubuntu-small-3.10.3 \
+          python3 -m pytest tests/test_wrapper -v
