@@ -24,6 +24,7 @@ jobs:
       run: |
           docker run --rm -v ${{ github.workspace }}:/gdal-jvf-dtm-wrapper -w /gdal-jvf-dtm-wrapper \
           ghcr.io/osgeo/gdal:ubuntu-full-3.10.3 \
+          sudo apt install python3-pip \
           python3 -m pip install pytest \
           python3 -m pip install -r requirements.txt \
           python3 -m pytest tests/test_wrapper -v
