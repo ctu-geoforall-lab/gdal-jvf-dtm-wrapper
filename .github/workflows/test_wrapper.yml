@@ -26,4 +26,4 @@ jobs:
           ghcr.io/osgeo/gdal:ubuntu-full-3.10.3 \
           bash -c "apt-get update && apt-get install -y python3-pip python3-pytest; \
           python3 -m pip install -r requirements.txt --break-system-packages; \
-          python3 -m pytest tests/test_wrapper -v"
+          python3 -m pytest tests/test_wrapper.py -v"
