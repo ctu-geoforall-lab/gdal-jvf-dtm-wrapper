@@ -13,7 +13,7 @@ def error(msg):
     print("ERROR: " + msg, file=sys.stderr)
 
 def inconsistency_error(layer_name, layer_name_gdal, what, jvf_dtm, gpkg):
-    msg = f"Layer {layer_name}/{layer_name_gdal}: inconsistent {what}"
+    msg = f"Inconsistent {what}"
     if gpkg:
         msg += f" (JVF DTM: {jvf_dtm}; GPKG {gpkg})"
     else:
@@ -30,6 +30,14 @@ def collect_fields(layer):
         fields[field_defn.GetName()] = field_defn.GetTypeName()
     return fields
 
+def get_layer_by_name_case_insensitive(datasource, target_name):
+    target_name_lower = target_name.lower()
+    for i in range(datasource.GetLayerCount()):
+        layer = datasource.GetLayerByIndex(i)
+        if layer.GetName().lower() == target_name_lower:
+            return layer
+    return None
+
 def main(input_xml, ref_gpkg):
     # open ref data
     ds_gpkg = gdal.OpenEx(ref_gpkg, gdal.OF_VECTOR | gdal.GA_ReadOnly)
@@ -42,9 +50,11 @@ def main(input_xml, ref_gpkg):
         # compare JVF vs GPKG
         imp_layers = {}
         for layer_name, layer in inp:
+            print(f"Layer: {layer_name}/{layer.GetName()}", file=sys.stderr)
             layer_defn = layer.GetLayerDefn()
 
             layer_gpkg = ds_gpkg.GetLayerByName(layer_name)
+            # layer_gpkg = get_layer_by_name_case_insensitive(ds_gpkg, layer_name)
             if layer_gpkg is None:
                 error(f"Layer '{layer_name}' not found in GPKG reference")
                 continue
