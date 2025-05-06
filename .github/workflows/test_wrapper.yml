@@ -1,0 +1,29 @@
+name: Test GDAL-JVF-DTM wrapper
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Docker
+      run: |
+          docker pull ghcr.io/osgeo/gdal:ubuntu-full-3.10.3
+
+    - name: Run test
+      run: |
+          docker run --rm -v ${{ github.workspace }}:/gdal-jvf-dtm-wrapper -w /gdal-jvf-dtm-wrapper \
+          ghcr.io/osgeo/gdal:ubuntu-full-3.10.3 \
+          bash -c "apt-get update && apt-get install -y python3-pip python3-pytest; \
+          python3 -m pip install -r requirements.txt --break-system-packages; \
+          python3 -m pytest tests/test_wrapper.py -v"

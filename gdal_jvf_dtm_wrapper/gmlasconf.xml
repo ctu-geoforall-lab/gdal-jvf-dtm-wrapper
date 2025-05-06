@@ -1,7 +1,8 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:noNamespaceSchemaLocation="gmlasconf.xsd">
-    <LayerBuildingRules>
-      <IdentifierMaxLength>-1</IdentifierMaxLength>
+   <LayerBuildingRules>
+      <RemoveUnusedLayers>true</RemoveUnusedLayers>
+      <IdentifierMaxLength>512</IdentifierMaxLength>
       <PostgreSQLIdentifierLaundering>false</PostgreSQLIdentifierLaundering>
     </LayerBuildingRules>
 </Configuration>
