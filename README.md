@@ -1,6 +1,6 @@
 # GDAL Python wrapper pro JVF DTM
 
-![Tests](https://github.com/ctu-geoforall-lab/gdal-jvf-dtm-wrapper/actions/workflows/your-workflow-file.yml/badge.svg)
+![Tests](https://github.com/ctu-geoforall-lab/gdal-jvf-dtm-wrapper/actions/workflows/test_wrapper.yml/badge.svg)
 
 **Experimentální** prototyp Python wrapperu (API)
 
