@@ -1,3 +1,4 @@
+import pytest
 from pathlib import Path
 
 from osgeo import ogr
@@ -46,18 +47,33 @@ ref_feature = {
     ]
 }
 
+def _setup(request, jvf_version=None):
+    request.cls.jvf_version = jvf_version
+
+@pytest.fixture(scope='class')
+def class_manager(request, pytestconfig):
+    jvf_version = pytestconfig.getoption("jvf_version")
+    _setup(request, jvf_version)
+    yield
+
+@pytest.mark.usefixtures('class_manager')
 class TestGdalJvfDtmWrapper:
-    data_dir = Path(__file__).parent / "sample_data"
-    zps_file = data_dir / "ukazka_ZPS.xml"
+
+    @property
+    def test_file(self):
+        data_dir = Path(__file__).parent / "sample_data" / f"v{self.jvf_version.replace('.', '')[:3]}"
+
+        return data_dir / "ukazka_ZPS.xml" if self.jvf_version == "1.4.3" else data_dir / "ukazka_DI.jvf.xml"
 
     def test_001_open(self):
         """Open data and check metadata."""
-        with GdalJvfDtmWrapper(self.zps_file) as wrp:
-            assert wrp.meta['verze'] == '1.4.3'
+        print(self.test_file)
+        with GdalJvfDtmWrapper(self.test_file) as wrp:
+            assert wrp.meta['verze'] == self.jvf_version
 
     def test_002_layers(self):
         """Test reported layers."""
-        with GdalJvfDtmWrapper(self.zps_file) as wrp:
+        with GdalJvfDtmWrapper(self.test_file) as wrp:
             # number of reported layers
             assert len(wrp) == 8
 
@@ -79,7 +95,7 @@ class TestGdalJvfDtmWrapper:
 
     def test_003_layer(self):
         """Test specified layer."""
-        with GdalJvfDtmWrapper(self.zps_file) as wrp:
+        with GdalJvfDtmWrapper(self.test_file) as wrp:
             layer = wrp[ref_layer["name"]]
             assert layer is not None
             assert layer.GetName() == ref_layer["gdal_name"]

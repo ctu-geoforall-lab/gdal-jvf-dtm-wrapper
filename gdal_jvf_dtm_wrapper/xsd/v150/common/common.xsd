@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="cmn" xmlns="cmn">
+  <xs:import schemaLocation="../ext/gml/gml.xsd" namespace="http://www.opengis.net/gml/3.2"/>
+  <xs:element name="VerzeJVFDTM">
+    <xs:annotation>
+      <xs:documentation>Verze JVF DTM</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="1.5.0.beta4"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="DatumZapisu" type="xs:dateTime">
+    <xs:annotation>
+      <xs:documentation>Datum a čas vytvoření souboru</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="TypZapisu">
+    <xs:annotation>
+      <xs:documentation>Typ zápisu</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="kompletní zápis"/>
+        <xs:enumeration value="změnové věty"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <!--  zrušeno v JVF v. 1.5.0
+    <xs:element name="ZapisObjektu">
+    <xs:annotation>
+      <xs:documentation>Způsob zápisu objektu: i - insert, u - update, d - delete, r - reference</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="i"/>
+        <xs:enumeration value="u"/>
+        <xs:enumeration value="d"/>
+        <xs:enumeration value="r"/>
+        <xs:length value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+-->
+
+  <!-- Geometrie objektů  -->
+
+  <xs:complexType name="GeometrieObjektuBodType">
+    <xs:sequence>
+      <xs:element ref="gml:pointProperty"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GeometrieObjektuLinieType">
+    <xs:sequence>
+      <xs:element ref="gml:curveProperty"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GeometrieObjektuPlochaDTIType">
+    <xs:sequence>
+      <xs:element ref="gml:surfaceProperty"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GeometrieObjektuPlochaZPSType">
+    <xs:sequence>
+      <xs:element ref="gml:surfaceProperty">
+        <xs:annotation>
+          <xs:documentation>2D geometrie pro plochu</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="gml:multiCurveProperty">
+        <xs:annotation>
+          <xs:documentation>3D geometrie pro obvod</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
