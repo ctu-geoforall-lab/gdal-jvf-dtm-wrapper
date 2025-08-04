@@ -47,7 +47,7 @@ ref_feature = {
 }
 
 class TestGdalJvfDtmWrapper:
-    data_dir = Path(__file__).parent / "sample_data"
+    data_dir = Path(__file__).parent / "sample_data" / "v143"
     zps_file = data_dir / "ukazka_ZPS.xml"
 
     def test_001_open(self):

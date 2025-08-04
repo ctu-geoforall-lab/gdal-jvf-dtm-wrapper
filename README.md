@@ -26,9 +26,15 @@ Příklad `ogrinfo`:
 ```
 ogrinfo \
  --config OGR_GMLAS_XERCES_MAX_TIME=0 \
- -oo XSD=gdal_jvf_dtm_wrapper/xsd/index/index_data.xsd \
+ -oo XSD=gdal_jvf_dtm_wrapper/xsd/v143/index/index_data.xsd \
  -oo CONFIG_FILE=gdal_jvf_dtm_wrapper/gmlasconf.xml \
- GMLAS:tests/sample_data/ukazka_ZPS.xml
+ GMLAS:tests/sample_data/v143/ukazka_ZPS.xml
+```
+
+Test GDAL JVF DTM wrapperu:
+
+```
+python3 -m pytest tests/test_wrapper.py
 ```
 
 ## Porovnání s GPKG ISDMVS

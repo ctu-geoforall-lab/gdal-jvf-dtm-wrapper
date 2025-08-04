@@ -19,7 +19,7 @@ class GdalJvfDtmWrapper(AbstractContextManager['GdalJvfDtmWrapper']):
         :param str filename: input data in JVF DTM
         """
         self._filename = filename
-        xsd_path = Path(__file__).parent / "xsd" / "index" / "index_data.xsd"
+        xsd_path = Path(__file__).parent / "xsd" / "v143" / "index" / "index_data.xsd"
         conf_path = Path(__file__).parent / "gmlasconf.xml"
         gdal.SetConfigOption('CPL_LOG', '/dev/null') # discard warning
         gdal.SetConfigOption('OGR_GMLAS_XERCES_MAX_TIME', '0')
